@@ -21,6 +21,46 @@
     .toggle-link, .toggle-btn, .indicator-btn { cursor: pointer; font-weight: bold; margin-top: 0.5rem; display: inline-block; color: #121412; text-decoration: none; }
     .toggle-link:hover, .toggle-btn:hover, .indicator-btn:hover { text-decoration: underline; }
   </style>
+  <style>
+.menu-bloc {
+  width: 220px;
+  background-color: #f1f3f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.menu-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  padding: 6px 0;
+}
+
+.navlinks {
+  display: none; /* Menu caché par défaut */
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: #202124;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.navlinks a:hover {
+  background-color: #e8f0fe;
+}
+</style>
 </head>
 <body>
   <!-- Header / Nav -->
@@ -31,19 +71,37 @@
       <img src="logo.png" alt="Logo Sampathé" class="logo" />
       <h1>SAMPATHE • Plan de Développement</h1>
     </a>
-    <div class="navlinks">
-      <a href="#intro">A propos</a>
-      <a href="#contexte">Contexte</a>
-      <a href="#objectifs">Objectifs</a>
-      <a href="#axes">Axes</a>
-      <a href="#gestion">Gestion</a>
-      <a href="#strategie">Stratégie</a>
-      <a href="#indicateurs">Indicateurs</a>
-      <a href="#conclusion">Conclusion</a>
-    </div>
+   <!-- Menu bloc -->
+<div class="menu-bloc">
+  <button class="menu-toggle">Plan du document &#9662;</button>
+  <div class="navlinks">
+    <a href="#intro">A propos</a>
+    <a href="#contexte">Contexte</a>
+    <a href="#objectifs">Objectifs</a>
+    <a href="#axes">Axes</a>
+    <a href="#gestion">Gestion</a>
+    <a href="#strategie">Stratégie</a>
+    <a href="#indicateurs">Indicateurs</a>
+    <a href="#conclusion">Conclusion</a>
+  </div>
+</div>
+
   </nav>
+  
 </header>
 
+<script>
+const toggleBtn = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.navlinks');
+
+toggleBtn.addEventListener('click', () => {
+  if(navLinks.style.display === 'flex') {
+    navLinks.style.display = 'none'; // refermer
+  } else {
+    navLinks.style.display = 'flex'; // ouvrir
+  }
+});
+</script>
 
   <!-- Hero -->
   <main id="top" class="hero">
