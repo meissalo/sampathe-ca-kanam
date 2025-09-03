@@ -118,7 +118,7 @@
   font-size: 18px;
   margin: 0;
   letter-spacing: 0.2px;
-  color: #f5f5f5;
+  color: #0f0d0d;
 }
 
 .navlinks {
@@ -462,3 +462,4 @@ body, p, li, .lead, .objectifs-list li, .conclusion-list li, .card p, .kpi small
 .menu-bloc .navlinks a:hover {
   background-color: #e8f0fe;
 }
+
